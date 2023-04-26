@@ -3772,6 +3772,17 @@ void regStudent(string login, string password) {
 }
 
 bool checkName(string name) {
+
+	if (size(name) < 3) {
+		system("cls");
+		GoToXY(70, 20);
+		cout << "Слишком короткое имя!";
+		GoToXY(65, 22);
+		pulsar();
+		system("cls");
+		return true;
+	}
+
 	for (int i = 0; i < size(name); ++i) {
 		if (name[i] == '0' || name[i] == '1' || name[i] == '2' || name[i] == '3' || name[i] == '4'
 			|| name[i] == '5' || name[i] == '6' || name[i] == '7' || name[i] == '8' || name[i] == '9'
@@ -3790,18 +3801,11 @@ bool checkName(string name) {
 			system("cls");
 			GoToXY(70, 20);
 			cout << "Недопустимые символы!";
-			_getch();
+			GoToXY(65, 22);
+			pulsar();
 			system("cls");
 			return true;
 		}
-	}
-	if (size(name) < 3) {
-		system("cls");
-		GoToXY(70, 20);
-		cout << "Слишком короткое имя!";
-		_getch();
-		system("cls");
-		return true;
 	}
 
 	if (name[0] == 'а' || name[0] == 'й'
@@ -3815,7 +3819,35 @@ bool checkName(string name) {
 		system("cls");
 		GoToXY(65, 20);
 		cout << "Ф.И.О. должно начинаться с больших букв!";
-		_getch();
+		GoToXY(65, 22);
+		pulsar();
+		system("cls");
+		return true;
+	}
+
+	int capsLetters = 0, spaces = 0;
+	for (int i = 0; i < size(name); ++i) {
+		if (name[i] == 'А' || name[i] == 'Й'
+			|| name[i] == 'Ц' || name[i] == 'Х' || name[i] == 'Ъ' || name[i] == 'У'
+			|| name[i] == 'У' || name[i] == 'З' || name[i] == 'Ф' || name[i] == 'Ы' || name[i] == 'В'
+			|| name[i] == 'К' || name[i] == 'Щ' || name[i] == 'Д' || name[i] == 'Л' || name[i] == 'П'
+			|| name[i] == 'Е' || name[i] == 'Ш' || name[i] == 'Ж' || name[i] == 'О' || name[i] == 'Р'
+			|| name[i] == 'Н' || name[i] == 'Г' || name[i] == 'Э' || name[i] == 'Я' || name[i] == 'Ч'
+			|| name[i] == 'С' || name[i] == 'М' || name[i] == 'Ю' || name[i] == 'Б' || name[i] == 'Ь'
+			|| name[i] == 'Т' || name[i] == 'И' || name[i] == 'Ё') {
+			++capsLetters;
+		}
+		if (name[i] == ' ') {
+			++spaces;
+		}
+	}
+
+	if (capsLetters != spaces + 1 && name[size(name) - 1] != ' ') {
+		system("cls");
+		GoToXY(65, 20);
+		cout << "В Ф.И.О. не должно быть заглавных букв, где это не требуется!";
+		GoToXY(70, 22);
+		pulsar();
 		system("cls");
 		return true;
 	}
@@ -3823,7 +3855,7 @@ bool checkName(string name) {
 	for (int i = 0; i < size(name); ++i) {
 		if (name[i++] == ' ') {
 			if (name[i] == 'а' || name[i] == 'й'
-				|| name[i] == 'ц' || name[i] == 'х' || name[i] == 'ъ' || name[i] == 'y' || name[i] == 'u'
+				|| name[i] == 'ц' || name[i] == 'х' || name[i] == 'ъ' || name[i] == 'y'
 				|| name[i] == 'у' || name[i] == 'з' || name[i] == 'ф' || name[i] == 'ы' || name[i] == 'в'
 				|| name[i] == 'к' || name[i] == 'щ' || name[i] == 'д' || name[i] == 'л' || name[i] == 'п'
 				|| name[i] == 'е' || name[i] == 'ш' || name[i] == 'ж' || name[i] == 'о' || name[i] == 'р'
@@ -3833,8 +3865,8 @@ bool checkName(string name) {
 				system("cls");
 				GoToXY(65, 20);
 				cout << "Ф.И.О. должно начинаться с больших букв!";
-				_getch();
-				system("cls");
+				GoToXY(65, 22);
+				pulsar();				system("cls");
 				return true;
 			}
 		}
@@ -4041,9 +4073,24 @@ bool checkLogin(string login) {
 			system("cls");
 			GoToXY(55, 20);
 			cout << "Доступны только следующие спец. символы: _ (нижнее подчеркивание)  . (точка)";
+			GoToXY(70, 22);
+			pulsar();
+			system("cls");
+			return true;
+		}
+		if (login[i] == 'а' || login[i] == 'й'
+			|| login[i] == 'ц' || login[i] == 'х' || login[i] == 'ъ' || login[i] == 'y'
+			|| login[i] == 'у' || login[i] == 'з' || login[i] == 'ф' || login[i] == 'ы' || login[i] == 'в'
+			|| login[i] == 'к' || login[i] == 'щ' || login[i] == 'д' || login[i] == 'л' || login[i] == 'п'
+			|| login[i] == 'е' || login[i] == 'ш' || login[i] == 'ж' || login[i] == 'о' || login[i] == 'р'
+			|| login[i] == 'н' || login[i] == 'г' || login[i] == 'э' || login[i] == 'я' || login[i] == 'ч'
+			|| login[i] == 'с' || login[i] == 'м' || login[i] == 'ю' || login[i] == 'б' || login[i] == 'ь'
+			|| login[i] == 'т' || login[i] == 'и' || login[i] == 'ё') {
+			system("cls");
+			GoToXY(70, 20);
+			cout << "Логин не должен состоять из букв русского алфавита!";
 			GoToXY(75, 22);
-			cout << "Попробуйте еще раз";
-			_getch();
+			pulsar();
 			system("cls");
 			return true;
 		}
@@ -4061,6 +4108,22 @@ bool checkPassword(string str) {
 			GoToXY(68, 22);
 			cout << "Вы ввели запрещенный символ!";
 			_getch();
+			system("cls");
+			return true;
+		}
+		if (str[i] == 'а' || str[i] == 'й'
+			|| str[i] == 'ц' || str[i] == 'х' || str[i] == 'ъ' || str[i] == 'y'
+			|| str[i] == 'у' || str[i] == 'з' || str[i] == 'ф' || str[i] == 'ы' || str[i] == 'в'
+			|| str[i] == 'к' || str[i] == 'щ' || str[i] == 'д' || str[i] == 'л' || str[i] == 'п'
+			|| str[i] == 'е' || str[i] == 'ш' || str[i] == 'ж' || str[i] == 'о' || str[i] == 'р'
+			|| str[i] == 'н' || str[i] == 'г' || str[i] == 'э' || str[i] == 'я' || str[i] == 'ч'
+			|| str[i] == 'с' || str[i] == 'м' || str[i] == 'ю' || str[i] == 'б' || str[i] == 'ь'
+			|| str[i] == 'т' || str[i] == 'и' || str[i] == 'ё') {
+			system("cls");
+			GoToXY(70, 20);
+			cout << "Пароль не должен состоять из букв русского алфавита!";
+			GoToXY(75, 22);
+			pulsar();
 			system("cls");
 			return true;
 		}
@@ -4304,7 +4367,7 @@ void sortNoutput() {
 	cout << "——————————————————————————————————————————————————————————————————————————————————————————";
 
 	y = 8;
-	for (int i = 0; i < 10 && newArray[i].group > 100000 && newArray[i].group < 999999 && newArray[i].averageGrade >= 0; ++i, y += 2) {
+	for (int i = 0; i < 10 && newArray[i].group > 100000 && newArray[i].group < 999999 && newArray[i].averageGrade > 0; ++i, y += 2) {
 		GoToXY(45, y);
 		cout << "| " << i + 1;
 		GoToXY(52, y);
