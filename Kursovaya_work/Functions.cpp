@@ -1718,13 +1718,315 @@ void personalStudentsCabinet(int count) {
 
 
 
+void changeExam(int count, int professor) {
+	system("cls");
+	int newMark{};
+	newMark = CheckNumber(newMark);
 
+	if (teachers[professor].subject == "english") {
+		clients[count].englishGradeExam = newMark;
+	}
+	else if (teachers[professor].subject == "math") {
+		clients[count].mathGradeExam = newMark;
+	}
+	else if (teachers[professor].subject == "Oaip") {
+		clients[count].oaipGradeExam = newMark;
+	}
+	else if (teachers[professor].subject == "oop") {
+		clients[count].oopGradeExam = newMark;
+	}
+	else clients[count].physicsGradeExam = newMark;
 
+	system("cls");
+	GoToXY(70, 20);
+	cout << "Отметка успешно исправлена!";
+	GoToXY(65, 22);
+	pulsar();
 
+}
+
+void changeOlimp(int count, int professor) {
+	system("cls");
+	int newMark{};
+	newMark = CheckNumber(newMark);
+
+	if (teachers[professor].subject == "english") {
+		clients[count].englishGradeOlimp = newMark;
+	}
+	else if (teachers[professor].subject == "math") {
+		clients[count].mathGradeOlimp = newMark;
+	}
+	else if (teachers[professor].subject == "Oaip") {
+		clients[count].oaipGradeOlimp = newMark;
+	}
+	else if (teachers[professor].subject == "oop") {
+		clients[count].oopGradeOlimp = newMark;
+	}
+	else clients[count].physicsGradeOlimp = newMark;
+
+	system("cls");
+	GoToXY(70, 20);
+	cout << "Отметка успешно исправлена!";
+	GoToXY(65, 22);
+	pulsar();
+
+}
+
+void changeLaba(int count, int professor) {
+	system("cls");
+
+	GoToXY(55, 18);
+	cout << "Оценку по какой лабораторной работе вы желаете исправить?   ";
+	int numberOfLaba{};
+	while (!(cin >> numberOfLaba) || numberOfLaba <= 0) {
+		system("cls");
+		cin.clear();
+		cin.ignore(1024, '\n');
+		GoToXY(65, 20);
+		cout << "Неверное значение!";
+		SetConsoleTextAttribute(hStdOut, 7);
+		GoToXY(65, 22);
+		cout << "Попробуйте снова: ";
+	}
+	--numberOfLaba;
+
+	if (teachers[professor].subject == "english") {
+		if (clients[count].englishGradeLaba[0] < 1) {
+			system("cls");
+			GoToXY(65, 20);
+			cout << "У выбранного студента нет ни одной оценки!";
+			system("cls");
+			return;
+		}
+		if (clients[count].englishGradeLaba[numberOfLaba] <= 0) {
+			GoToXY(60, 20);
+			cout << "Оценка за выбранную лабораторную работу не найдена!";
+			GoToXY(65, 22);
+			pulsar();
+			return;
+		}
+		else {
+			int newMark{};
+			newMark = CheckNumber(newMark);
+			clients[count].englishGradeLaba[numberOfLaba] = newMark;
+		}
+	}
+	else if (teachers[professor].subject == "math") {
+		if (clients[count].mathGradeLaba[0] < 1) {
+			system("cls");
+			GoToXY(65, 20);
+			cout << "У выбранного студента нет ни одной оценки!";
+			system("cls");
+			return;
+		}
+		if (clients[count].mathGradeLaba[numberOfLaba] <= 0) {
+			GoToXY(60, 20);
+			cout << "Оценка за выбранную лабораторную работу не найдена!";
+			GoToXY(65, 22);
+			pulsar();
+			return;
+		}
+		else {
+			int newMark{};
+			newMark = CheckNumber(newMark);
+			clients[count].mathGradeLaba[numberOfLaba] = newMark;
+		}
+	}
+	else if (teachers[professor].subject == "Oaip") {
+		if (clients[count].oaipGradeLaba[0] < 1) {
+			system("cls");
+			GoToXY(65, 20);
+			cout << "У выбранного студента нет ни одной оценки!";
+			system("cls");
+			return;
+		}
+		if (clients[count].oaipGradeLaba[numberOfLaba] <= 0) {
+			GoToXY(60, 20);
+			cout << "Оценка за выбранную лабораторную работу не найдена!";
+			GoToXY(65, 22);
+			pulsar();
+			return;
+		}
+		else {
+			int newMark{};
+			newMark = CheckNumber(newMark);
+			clients[count].oaipGradeLaba[numberOfLaba] = newMark;
+		}
+	}
+	else if (teachers[professor].subject == "oop") {
+		if (clients[count].oopGradeLaba[0] < 1) {
+			system("cls");
+			GoToXY(65, 20);
+			cout << "У выбранного студента нет ни одной оценки!";
+			system("cls");
+			return;
+		}
+		if (clients[count].oopGradeLaba[numberOfLaba] <= 0) {
+			GoToXY(60, 20);
+			cout << "Оценка за выбранную лабораторную работу не найдена!";
+			GoToXY(65, 22);
+			pulsar();
+			return;
+		}
+		else {
+			int newMark{};
+			newMark = CheckNumber(newMark);
+			clients[count].oopGradeLaba[numberOfLaba] = newMark;
+		}
+	}
+	else {
+		if (clients[count].physicsGradeLaba[0] < 1) {
+			system("cls");
+			GoToXY(65, 20);
+			cout << "У выбранного студента нет ни одной оценки!";
+			system("cls");
+			return;
+		}
+		if (clients[count].physicsGradeLaba[numberOfLaba] <= 0) {
+			GoToXY(60, 20);
+			cout << "Оценка за выбранную лабораторную работу не найдена!";
+			GoToXY(65, 22);
+			pulsar();
+			return;
+		}
+		else {
+			int newMark{};
+			newMark = CheckNumber(newMark);
+			clients[count].physicsGradeLaba[numberOfLaba] = newMark;
+		}
+	}
+
+	system("cls");
+	GoToXY(70, 20);
+	cout << "Отметка успешно исправлена!";
+	GoToXY(65, 22);
+	pulsar();
+}
+
+void formOfLessonChoice(int count, int professor) {
+
+	system("cls");
+
+	string Menu[] = { "Экзамен", "Олимпиада", "Лабораторная работа", "Назад"};
+
+	int active_menu = 0; // будем бегать по меню изменяя эту переменную
+
+	char ch;
+	while (1)
+	{
+		int x = 77, y = 20;
+		GoToXY(67, y - 1);
+		SetConsoleTextAttribute(hStdOut, 7);
+		cout << "————————— Выберите пункт —————————" << endl;
+
+		for (int i = 0; i < size(Menu); i++)
+		{
+			if (i == active_menu) 	SetConsoleTextAttribute(hStdOut, 6);
+			else 	SetConsoleTextAttribute(hStdOut, 7);
+
+			if (i == 0) {
+				GoToXY(x + 3, ++y);
+				cout << Menu[i] << endl;
+			}
+			else if (i == 1) {
+				GoToXY(x + 2, ++y);
+				cout << Menu[i] << endl;
+			}
+			else if (i == 2) {
+				GoToXY(x - 2, ++y);
+				cout << Menu[i] << endl;
+			}
+			else {
+				GoToXY(x + 4, ++y);
+				cout << Menu[i] << endl;
+			}
+		}
+
+		GoToXY(67, y + 2);
+		SetConsoleTextAttribute(hStdOut, 7);
+		cout << "——————————————————————————————————" << endl;
+
+		ch = _getch(); //код нажатой клавиши
+		if (ch == -32) ch = _getch(); // Отлавливаем стрелочки (2 байтовые)
+		switch (ch)
+		{
+		case ESCAPE:
+			SetConsoleTextAttribute(hStdOut, 7);
+			recordLabaGrades();
+			exit(0);
+		case UP:
+			if (active_menu > 0) {
+				--active_menu;
+			}
+			else {
+				active_menu = size(Menu) - 1;
+			}
+			break;
+		case DOWN:
+			if (active_menu < size(Menu) - 1) {
+				++active_menu;
+			}
+			else {
+				active_menu = 0;
+			}
+			break;
+		case SPACE:
+			switch (active_menu)
+			{
+			case 0: {
+				changeExam(count, professor);
+				return;
+			}
+			case 1:
+				changeOlimp(count, professor);
+				return;
+			case 2:
+				changeLaba(count, professor);
+				return;
+			case 3:
+				return;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void changeGrade(int count) {
+	int y = 5;
+	system("cls");
+	GoToXY(70, y);
+	cout << "Выберите студента:";
+
+	y = choiceTable(y);
+
+	int i = 0;
+	for (i; i < CountOfUsers; ++i) {
+		y += 2;
+		GoToXY(57, y);
+		cout << i + 1;
+		GoToXY(60, y);
+		cout << " | " << clients[i].group;
+		GoToXY(70, y);
+		cout << "| " << clients[i].name;
+		GoToXY(100, y);
+		cout << "| " << clients[i].login;
+		GoToXY(55, y + 1);
+		cout << "——————————————————————————————————————————————————————————————";
+	}
+	int choice{};
+	choice = checkNum(choice, CountOfUsers, i);
+	--choice;
+
+	formOfLessonChoice(choice, count);
+
+	system("cls");
+}
 
 void MainProfessorMenu(int count) {
 	system("cls");
-	string Menu[] = { "Выставить оценку за экзамен", "Выставить оценку по олимпиаде", "Выставить оценку по лабораторной работе", "Список студентов с оценкой ниже заданной", "Выставить пропуски студентам", "Просмотреть пропуски студентов", "Изменить личную информацию", "Личный кабинет", "Выйти из аккаунта"};
+	string Menu[] = { "Выставить оценку за экзамен", "Выставить оценку по олимпиаде", "Выставить оценку по лабораторной работе", "Список студентов с оценкой ниже заданной", "Выставить пропуски студентам", "Просмотреть пропуски студентов", "Исправить выставленную отметку", "Изменить личную информацию", "Личный кабинет", "Выйти из аккаунта"};
 	int active_menu = 0;
 
 	char ch;
@@ -1798,11 +2100,15 @@ void MainProfessorMenu(int count) {
 				if (studentsCount()) break;
 				outputPasses(count);
 				break;
-			case 6: changeProfessorProfileInfo(count);
+			case 6:
+				if (studentsCount()) break;
+				changeGrade(count);
 				break;
-			case 7: personalProfessorsCabinet(count);
+			case 7: changeProfessorProfileInfo(count);
 				break;
-			case 8:
+			case 8: personalProfessorsCabinet(count);
+				break;
+			case 9:
 				return;
 			}
 			break;
@@ -3301,7 +3607,7 @@ int choiceTable(int y) {
 	GoToXY(100, y);
 	cout << "| Логин";
 	GoToXY(55, y + 1);
-	cout << "——————————————————————————————————————————————————————";
+	cout << "——————————————————————————————————————————————————————————————";
 	return y;
 }
 
@@ -3325,7 +3631,7 @@ void rateExam(int count) {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
