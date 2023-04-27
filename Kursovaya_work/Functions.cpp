@@ -426,7 +426,7 @@ void RegistrationMenu() {
 				system("CLS");
 				int i = 0;
 				i = Registration(i);
-				if (i == 0) MainStudentMenu(CountOfUsers);
+				if (i == 0) MainStudentMenu(CountOfUsers - 1);
 				else if(i == 1) MainProfessorMenu(CountOfProfessors - 1);
 				system("CLS");
 				break;
@@ -1705,8 +1705,13 @@ void personalStudentsCabinet(int count) {
 	cout << "Логин\t\t" << clients[count].login;
 	GoToXY(x, y += 2);
 	averageGrade(); // сначала узнаем ср оценку
-	cout.precision(3);
-	cout << "Ср. оценка\t" << clients[count].averageGrade;
+	if (clients[count].averageGrade < 1) {
+		cout << "Ср. оценка\t-";
+	}
+	else {
+		cout.precision(3);
+		cout << "Ср. оценка\t" << clients[count].averageGrade;
+	}
 
 	GoToXY(62, y += 2);
 	cout << "—————————————————————————————————————————————" << endl;
@@ -4074,7 +4079,7 @@ void regStudent(string login, string password) {
 	clients[CountOfUsers].group = group;
 	clients[CountOfUsers].name = name;
 	++CountOfUsers;
-	_getch();
+	Sleep(800);
 }
 
 bool checkName(string name) {
