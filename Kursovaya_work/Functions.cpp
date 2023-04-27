@@ -2,29 +2,9 @@
 #include "Functions.h"
 #include "Structure.h"
 
-using namespace std;
-
-
-
-
-
-
-
 
 
 HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
-
-
-
-// ПРОВЕРКА НА ФИО С БОЛЬШОЙ БУКВЫ, ТОЛЬКО НА РУССКОМ +
-// ВЫСТАВЛЯТЬ ОЦЕНКИ ПО ФИО +
-
-/* 
-	доп задание:
-	вывести список лучших учеников
-*/
-
-
 
 int CountOfUsers = 0; // кол-во студентов
 int CountOfProfessors = 0; // кол-во преподов
@@ -33,7 +13,6 @@ const string professorKey = "professor123";
 
 const string adminLogin = "admin";
 const string adminPassword = "admin123";
-
 
 
 
@@ -169,198 +148,7 @@ void Pentagon() {
 	}
 }
 
-void table() {
-	/*for (int i = 0; i < CountOfUsers; ++i) {
-		cout << clients[i].name << endl;
-		cout << clients[i].login << endl;
-
-		string password = clients[i].password;
-		password = PressmarkFunc(password);
-		cout << password << endl;
-
-		cout << "angl exam: " << clients[i].englishGradeExam << endl;
-		cout << "angl olimp: " << clients[i].englishGradeOlimp << endl;
-		cout << "math exam: " << clients[i].mathGradeExam << endl;
-		cout << "math olimp: " << clients[i].mathGradeOlimp << endl;
-		cout << "oaip exam: " << clients[i].oaipGradeExam << endl;
-		cout << "oaip olimp: " << clients[i].oaipGradeOlimp << endl;
-		cout << "oop exam: " << clients[i].oopGradeExam << endl;
-		cout << "oop olimp: " << clients[i].oopGradeOlimp << endl;
-		cout << "physics exam: " << clients[i].physicsGradeExam << endl;
-		cout << "physics olimp: " << clients[i].physicsGradeOlimp << endl;
-
-
-
-		// ЕДИНИЦЫ СКОРЕЕ ВСЕГО МОЖНО ЗАМЕНИТЬ НА СТРОКУ
-		cout << "Angl Laba:" << endl;
-		for (int j = 0; j < 50; ++j) {
-			if (clients[i].englishGradeLaba[j] < 1) {
-				cout << endl;
-				break;
-			}
-			cout << clients[i].englishGradeLaba[j] << endl;
-		}
-
-
-		cout << "Math lab" << endl;
-		for (int j = 0; j < 50; ++j) {
-			if (clients[i].mathGradeLaba[j] < 1) {
-				cout << endl;
-				break;
-			}
-			cout << clients[i].mathGradeLaba[j] << endl;
-		}
-
-
-		cout << "oaip lab" << endl;
-;		for (int j = 0; j < 50; ++j) {
-			if (clients[i].oaipGradeLaba[j] < 1) {
-				cout << endl;
-				break;
-			}
-			cout << clients[i].oaipGradeLaba[j] << endl;
-		}
-
-
-		cout << "oop lab" << endl;
-		for (int j = 0; j < 50; ++j) {
-			if (clients[i].oopGradeLaba[j] < 1) {
-				cout << endl;
-				break;
-			}
-			cout << clients[i].oopGradeLaba[j] << endl;
-		}
-
-
-		cout << "physics lab" << endl;
-		for (int j = 0; j < 50; ++j) {
-			if (clients[i].physicsGradeLaba[j] < 1) {
-				cout << endl;
-				break;
-			}
-			cout << clients[i].physicsGradeLaba[j] << endl;
-		}
-
-		cout << "\n" << endl;
-
-	}
-	_getch();
-	system("cls");
-	*/
-}
-
-void rainbow() {
-	int i = 2, x = 1, y = 1;
-	while (1) {
-		Sleep(1);
-		if (i == 2) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 70);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-		}
-		if (i == 3) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 100);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-		}
-		if (i == 4) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 40);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-		}
-		if (i == 5) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 50);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-		}
-		if (i == 6) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 20);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-		}
-		if (i == 7) {
-			GoToXY(x, y);
-			SetConsoleTextAttribute(hStdOut, 80);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-			GoToXY(x, ++y);
-			cout << " " << endl;
-
-		}
-		if (i == 8) {
-			GoToXY(x, 0);
-			i = 1;
-			y = 0;
-			++x;
-		}
-		if (_kbhit() || x == 170) {
-			SetConsoleTextAttribute(hStdOut, 7);
-			_getch();
-			system("cls");
-			return;
-		}
-		++i;
-		++y;
-	}
-}
-
+//главное меню
 void RegistrationMenu() {
 	setlocale(LC_ALL, "Rus"); // подкл рус яз
 	system("chcp 1251"); // два раза подк рус яз потому что при записи в файл кракозябра без систем
@@ -451,6 +239,7 @@ void RegistrationMenu() {
 	}
 }
 
+//расшифровка пароля
 string pressOutFunc(string str) {
 
 	for (int i = 0; i < size(str); ++i) {
@@ -459,6 +248,7 @@ string pressOutFunc(string str) {
 	return str;
 }
 
+//запись студентов в файл
 void recordLabaGrades() {
 
 
@@ -550,6 +340,7 @@ void recordLabaGrades() {
 	funcOut << endl;
 }
 
+//запись преподов в файл
 void recordProfessors() {
 	ofstream funcProfessorOut;
 	funcProfessorOut.open("professors.txt");
@@ -561,6 +352,7 @@ void recordProfessors() {
 	}
 }
 
+//чтение преподов из файлов
 bool readProfessorFile() {
 	string path = "professors.txt";
 	ifstream funcProfessorIn;
@@ -596,11 +388,7 @@ bool readProfessorFile() {
 	return true;
 }
 
-
-
-// ПРОВЕРИТЬ ЗДЕСЬ НА ЧТЕНИЕ +
-// ЖЕЛАТЕЛЬНО ВЫВЕСТИ В ТАБЛИЧКУ ИЛИ БЕЗ ОТЛАДЧИКА
-// вроде норм
+//чтение студентов из файла
 bool readStudentFile() {
 	string path = "students.txt";
 	ifstream funcIn;
@@ -706,6 +494,7 @@ bool readStudentFile() {
 
 
 
+//МЕНЮ АДМИНА
 void MainAdminMenu() {
 	system("cls");
 	//добавить список топ студентов и пентагон
@@ -718,7 +507,7 @@ void MainAdminMenu() {
 		int x = 65, y = 20;
 		GoToXY(62, y - 1);
 		SetConsoleTextAttribute(hStdOut, 7);
-		cout << "————————————— Меню преподавателя —————————————" << endl;
+		cout << "————————————— Меню администратора —————————————" << endl;
 
 		for (int i = 0; i < size(Menu); i++)
 		{
@@ -731,7 +520,7 @@ void MainAdminMenu() {
 
 		GoToXY(62, y + 2);
 		SetConsoleTextAttribute(hStdOut, 7);
-		cout << "——————————————————————————————————————————————" << endl;
+		cout << "———————————————————————————————————————————————" << endl;
 
 		ch = _getch(); //код нажатой клавиши
 		if (ch == -32) ch = _getch(); // Отлавливаем стрелочки (2 байтовые)
@@ -798,8 +587,7 @@ void MainAdminMenu() {
 	}
 }
 
-
-
+//выставить оценки по экзамену
 void rateExam() {
 	int y = 5;
 	system("cls");
@@ -1105,6 +893,7 @@ void rateLaba() {
 	}
 }
 
+//список студентов с оценкой ниже заданной
 void gradesList() {
 
 	system("cls");
@@ -1200,7 +989,7 @@ void putUpPasses() {
 	GoToXY(100, y);
 	cout << "| Логин";
 	GoToXY(55, y + 1);
-	cout << "——————————————————————————————————————————————————————";
+	cout << "—————————————————————————————————————————————————————————————————";
 
 
 	int i = 0;
@@ -1215,7 +1004,7 @@ void putUpPasses() {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "—————————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -1445,6 +1234,7 @@ void outputPasses() {
 
 
 
+// изменить номер группы
 void groupNumber(int count) {
 	system("cls");
 	int newGroup{};
@@ -1613,6 +1403,7 @@ void changeStudentProfileInfo(int count) {
 	}
 }
 
+// МЕНЮ СТУДЕНТА
 void MainStudentMenu(int count) {
 	system("cls");
 	string Menu[] = { "Вывести список топ студентов", "Просмотреть оценки за экзамены", "Просмотреть оценки по предметам", "Просмотреть количество пропусков", "Просмотреть баллы по олимпиадам", "Средняя оценка на контрольной точке", "Изменить личную информацию", "Личный кабинет", "Выйти из аккаунта"};
@@ -1722,7 +1513,7 @@ void personalStudentsCabinet(int count) {
 }
 
 
-
+// исправить отметку
 void changeExam(int count, int professor) {
 	system("cls");
 	int newMark{};
@@ -2029,6 +1820,7 @@ void changeGrade(int count) {
 	system("cls");
 }
 
+//МЕНЮ ПРЕПОДА
 void MainProfessorMenu(int count) {
 	system("cls");
 	string Menu[] = { "Выставить оценку за экзамен", "Выставить оценку по олимпиаде", "Выставить оценку по лабораторной работе", "Список студентов с оценкой ниже заданной", "Выставить пропуски студентам", "Просмотреть пропуски студентов", "Исправить выставленную отметку", "Изменить личную информацию", "Личный кабинет", "Выйти из аккаунта"};
@@ -2132,7 +1924,12 @@ void personalProfessorsCabinet(int count) {
 	GoToXY(x, ++y);
 	cout << "Ф.И.О.\t\t" << teachers[count].name;
 	GoToXY(x, y += 2);
-	cout << "Предмет\t" << teachers[count].subject;
+	cout << "Предмет\t";
+	if (teachers[count].subject == "english") cout << "английский язык";
+	else if (teachers[count].subject == "math") cout << "математика";
+	else if (teachers[count].subject == "oaip") cout << "ОАИП";
+	else if (teachers[count].subject == "oop") cout << "ООПиП";
+	else cout << "Физика";
 	GoToXY(x, y += 2);
 	cout << "Логин\t\t" << teachers[count].login;
 
@@ -2146,7 +1943,7 @@ void personalProfessorsCabinet(int count) {
 
 
 
-
+//предмет препода
 void subjects(int count) {
 	system("cls");
 
@@ -2971,53 +2768,58 @@ void outputPasses(int count) {
 
 	if (teachers[count].subject == "english") {
 		infoTablePasses();
-		int y = 22;
+		int y = 5;
 		for (int i = 0; i < CountOfUsers; ++i, y += 2) {
 			Passes(clients[i].englishPasses, clients[i].group, clients[i].name, clients[i].login, y, i);
 		}
-		_getch();
+		GoToXY(62, y + 1);
+		system("pause");
 		system("cls");
 	}
 	else if (teachers[count].subject == "math") {
 		infoTablePasses();
-		int y = 22;
+		int y = 5;
 		for (int i = 0; i < CountOfUsers; ++i, y += 2) {
 			Passes(clients[i].mathPasses, clients[i].group, clients[i].name, clients[i].login, y, i);
 		}
-		_getch();
+		GoToXY(62, y + 1);
+		system("pause");
 		system("cls");
 	}
 	else if (teachers[count].subject == "oaip") {
 		infoTablePasses();
-		int y = 22;
+		int y = 5;
 		for (int i = 0; i < CountOfUsers; ++i, y += 2) {
 			Passes(clients[i].oaipPasses, clients[i].group, clients[i].name, clients[i].login, y, i);
 		}
-		_getch();
+		GoToXY(62, y + 1);
+		system("pause");
 		system("cls");
 	}
 	else if (teachers[count].subject == "oop") {
 		infoTablePasses();
-		int y = 22;
+		int y = 5;
 		for (int i = 0; i < CountOfUsers; ++i, y += 2) {
 			Passes(clients[i].oopPasses, clients[i].group, clients[i].name, clients[i].login, y, i);
 		}
-		_getch();
+		GoToXY(62, y + 1);
+		system("pause");
 		system("cls");
 	}
 	else {
 		infoTablePasses();
-		int y = 22;
+		int y = 5;
 		for (int i = 0; i < CountOfUsers; ++i, y += 2) {
 			Passes(clients[i].physicsPasses, clients[i].group, clients[i].name, clients[i].login, y, i);
 		}
-		_getch();
+		GoToXY(62, y + 1);
+		system("pause");
 		system("cls");
 	}
 }
 
 void infoTablePasses() {
-	int y = 20;
+	int y = 3;
 
 	system("cls");
 	GoToXY(37, y);
@@ -3196,11 +2998,9 @@ void box() {
 }
 
 
-// ПРОВЕРИТЬ ЭТИ ШТУКИ +
-//ТОЖЕ ТАБЛИЧКА МБ +
-// ВЫВОДИТ СТУДЕНТОВ, КОТОРЫЕ НЕ ДОЛЖНЫ ВЫВОДИТЬСЯ +
+
 int recordEnglishStudentGrades(int count , int mark2, int mark1, int y) {
-	if (clients[count].englishGradeExam == 0 && clients[count].englishGradeOlimp == 0 && clients[count].englishGradeLaba[0] == 0) return 1;
+	if (!((clients[count].englishGradeExam >= mark1 && clients[count].englishGradeExam <= mark2) || ( clients[count].englishGradeOlimp >= mark1 && clients[count].englishGradeOlimp <= mark2 ) || (clients[count].englishGradeLaba[0] >= mark1 && clients[count].englishGradeLaba[0] <= mark2))) return 1;
 	GoToXY(5, y);
 	cout << "| " << clients[count].group;
 	GoToXY(15, y);
@@ -3213,7 +3013,7 @@ int recordEnglishStudentGrades(int count , int mark2, int mark1, int y) {
 	if ((clients[count].englishGradeExam <= mark2 && clients[count].englishGradeExam >= mark1) && clients[count].englishGradeExam > 0) {
 		cout << clients[count].englishGradeExam;
 	}
-	else if(clients[count].englishGradeExam < 1) {
+	else {
 		cout << "-";
 	}
 
@@ -3222,7 +3022,7 @@ int recordEnglishStudentGrades(int count , int mark2, int mark1, int y) {
 	if ((clients[count].englishGradeOlimp <= mark2 && clients[count].englishGradeOlimp >= mark1) && clients[count].englishGradeOlimp > 0) {
 		cout << clients[count].englishGradeOlimp;
 	}
-	else if(clients[count].englishGradeOlimp < 1) {
+	else {
 		cout << "-";
 	}
 
@@ -3230,7 +3030,10 @@ int recordEnglishStudentGrades(int count , int mark2, int mark1, int y) {
 	cout << "| ";
 	int x = 125;
 	for (int i = 0; i < 50; ++i) {
-		if (clients[count].englishGradeLaba[i] < 1) break;
+		if (clients[count].englishGradeLaba[i] < 1) {
+			cout << "-";
+			break;
+		}
 		if (clients[count].englishGradeLaba[i] <= mark2 && clients[count].englishGradeLaba[i] >= mark1) {
 			cout << clients[count].englishGradeLaba[i] << "  ";
 		}
@@ -3304,7 +3107,7 @@ void englishGradesList() {
 
 
 int recordMathStudentGrades(int count, int mark2, int mark1, int y) {
-	if (clients[count].mathGradeExam == 0 && clients[count].mathGradeOlimp == 0 && clients[count].mathGradeLaba[0] == 0) return 1;
+	if (!((clients[count].mathGradeExam >= mark1 && clients[count].mathGradeExam <= mark2) || (clients[count].mathGradeOlimp >= mark1 && clients[count].mathGradeOlimp <= mark2) || (clients[count].mathGradeLaba[0] >= mark1 && clients[count].mathGradeLaba[0] <= mark2))) return 1;
 	GoToXY(5, y);
 	cout << "| " << clients[count].group;
 	GoToXY(15, y);
@@ -3334,7 +3137,10 @@ int recordMathStudentGrades(int count, int mark2, int mark1, int y) {
 	cout << "| ";
 	int x = 125;
 	for (int i = 0; i < 50; ++i) {
-		if (clients[count].mathGradeLaba[i] < 1) break;
+		if (clients[count].mathGradeLaba[i] < 1) {
+			cout << "-";
+			break;
+		}
 		if (clients[count].mathGradeLaba[i] <= mark2 && clients[count].mathGradeLaba[i] >= mark1) {
 			cout << clients[count].mathGradeLaba[i] << "  ";
 		}
@@ -3378,7 +3184,7 @@ void mathGradesList() {
 
 
 int recordOaipStudentGrades(int count, int mark2, int mark1, int y) {
-	if (clients[count].oaipGradeExam == 0 && clients[count].oaipGradeOlimp == 0 && clients[count].oaipGradeLaba[0] == 0) return 1;
+	if (!((clients[count].oaipGradeExam >= mark1 && clients[count].oaipGradeExam <= mark2) || (clients[count].oaipGradeOlimp >= mark1 && clients[count].oaipGradeOlimp <= mark2) || (clients[count].oaipGradeLaba[0] >= mark1 && clients[count].oaipGradeLaba[0] <= mark2))) return 1;
 	GoToXY(5, y);
 	cout << "| " << clients[count].group;
 	GoToXY(15, y);
@@ -3408,7 +3214,10 @@ int recordOaipStudentGrades(int count, int mark2, int mark1, int y) {
 	cout << "| ";
 	int x = 125;
 	for (int i = 0; i < 50; ++i) {
-		if (clients[count].oaipGradeLaba[i] < 1) break;
+		if (clients[count].oaipGradeLaba[i] < 1) {
+			cout << "-";
+			break;
+		}
 		if (clients[count].oaipGradeLaba[i] <= mark2 && clients[count].oaipGradeLaba[i] >= mark1) {
 			cout << clients[count].oaipGradeLaba[i] << "  ";
 		}
@@ -3452,7 +3261,7 @@ void oaipGradesList() {
 
 
 int recordOopStudentGrades(int count, int mark2, int mark1, int y) {
-	if (clients[count].oopGradeExam == 0 && clients[count].oopGradeOlimp == 0 && clients[count].oopGradeLaba[0] == 0) return 1;
+	if (!((clients[count].oopGradeExam >= mark1 && clients[count].oopGradeExam <= mark2) || (clients[count].oopGradeOlimp >= mark1 && clients[count].oopGradeOlimp <= mark2) || (clients[count].oopGradeLaba[0] >= mark1 && clients[count].oopGradeLaba[0] <= mark2))) return 1;
 	GoToXY(5, y);
 	cout << "| " << clients[count].group;
 	GoToXY(15, y);
@@ -3482,7 +3291,10 @@ int recordOopStudentGrades(int count, int mark2, int mark1, int y) {
 	cout << "| ";
 	int x = 125;
 	for (int i = 0; i < 50; ++i) {
-		if (clients[count].oopGradeLaba[i] < 1) break;
+		if (clients[count].oopGradeLaba[i] < 1) {
+			cout << "-";
+			break;
+		}
 		if (clients[count].oopGradeLaba[i] <= mark2 && clients[count].oopGradeLaba[i] >= mark1) {
 			cout << clients[count].oopGradeLaba[i] << "  ";
 		}
@@ -3525,7 +3337,7 @@ void oopGradesList() {
 
 
 int recordPhysicsStudentGrades(int count, int mark2, int mark1, int y) {
-	if (clients[count].physicsGradeExam == 0 && clients[count].physicsGradeOlimp == 0 && clients[count].physicsGradeLaba[0] == 0) return 1;
+	if (!((clients[count].physicsGradeExam >= mark1 && clients[count].physicsGradeExam <= mark2) || (clients[count].physicsGradeOlimp >= mark1 && clients[count].physicsGradeOlimp <= mark2) || (clients[count].physicsGradeLaba[0] >= mark1 && clients[count].physicsGradeLaba[0] <= mark2))) return 1;
 	GoToXY(5, y);
 	cout << "| " << clients[count].group;
 	GoToXY(15, y);
@@ -3555,7 +3367,10 @@ int recordPhysicsStudentGrades(int count, int mark2, int mark1, int y) {
 	cout << "| ";
 	int x = 125;
 	for (int i = 0; i < 50; ++i) {
-		if (clients[count].physicsGradeLaba[i] < 1) break;
+		if (clients[count].physicsGradeLaba[i] < 1) {
+			cout << "-";
+			break;
+		}
 		if (clients[count].physicsGradeLaba[i] <= mark2 && clients[count].physicsGradeLaba[i] >= mark1) {
 			cout << clients[count].physicsGradeLaba[i] << "  ";
 		}
@@ -3595,9 +3410,6 @@ void physicsGradesList() {
 	pulsar();
 	system("cls");
 }
-
-
-
 
 
 
@@ -3682,10 +3494,6 @@ void rate_Exam(int count, int *grade) {
 	pulsar();
 	system("cls");
 }
-
-
-
-
 
 
 
@@ -3883,8 +3691,6 @@ void rate_Laba(int count, int *grade) {
 		}
 	}
 }
-
-
 
 
 
@@ -4338,7 +4144,7 @@ string PressmarkFunc(string str) {
 	return str;
 }
 
-// ОЧИСТИТЬ ПОТОК ВВОДА +
+
 void Autorization() {
 
 	string login;// ПРОВЕРКА +
@@ -4390,7 +4196,7 @@ bool checkLogin(string login) {
 			return true;
 		}
 		if (login[i] == 'а' || login[i] == 'й'
-			|| login[i] == 'ц' || login[i] == 'х' || login[i] == 'ъ' || login[i] == 'y'
+			|| login[i] == 'ц' || login[i] == 'х' || login[i] == 'ъ'
 			|| login[i] == 'у' || login[i] == 'з' || login[i] == 'ф' || login[i] == 'ы' || login[i] == 'в'
 			|| login[i] == 'к' || login[i] == 'щ' || login[i] == 'д' || login[i] == 'л' || login[i] == 'п'
 			|| login[i] == 'е' || login[i] == 'ш' || login[i] == 'ж' || login[i] == 'о' || login[i] == 'р'
@@ -4563,7 +4369,7 @@ bool CheckAutorization(string login, string password) {
 	return false;
 }
 
-// Текстовый курсор в точку x,y
+
 void GoToXY(short x, short y){
 	SetConsoleCursorPosition(hStdOut, { x, y });
 }
