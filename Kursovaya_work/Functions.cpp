@@ -4,6 +4,8 @@
 
 
 
+
+
 HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE); // Получаем дескриптор консоли
 
 int CountOfUsers = 0; // кол-во студентов
@@ -155,7 +157,7 @@ void RegistrationMenu() {
 	system("cls");
 	if (!readStudentFile() || !readProfessorFile()) { // считываем инфу из файла и записываем в структуру
 		system("cls");
-		return;
+		exit(0);
 	}
 
 	string Menu[] = { "Регистрация", "Авторизация", "Выход"};
@@ -608,7 +610,7 @@ void rateExam() {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -680,14 +682,15 @@ void rateExam() {
 				break;
 			case 2: rate_Exam(choice, &clients[choice].physicsGradeExam);
 				break;
-			case 5: return;
+			case 5:
+				system("cls");
+				return;
 			}
 			break;
 		default:
 			break;
 		}
 	}
-	system("cls");
 }
 
 void rateOlimp() {
@@ -710,7 +713,7 @@ void rateOlimp() {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -782,7 +785,9 @@ void rateOlimp() {
 				break;
 			case 2: rate_Olimp(choice, &clients[choice].physicsGradeOlimp);
 				break;
-			case 5: return;
+			case 5:
+				system("cls");
+				return;
 			default:
 				break;
 			}
@@ -810,7 +815,7 @@ void rateLaba() {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -2251,7 +2256,7 @@ void outputAverageGrade(int count) {
 	}
 
 	int topNumber = 0;
-	while (newArray[topNumber].login != clients[topNumber].login) ++topNumber;
+	while (newArray[topNumber].login != clients[count].login) ++topNumber;
 
 	int y = 7, x = 50;
 
@@ -3935,7 +3940,7 @@ bool checkName(string name) {
 		|| name[0] == 'т' || name[0] == 'и' || name[0] == 'ё') {
 		system("cls");
 		GoToXY(65, 20);
-		cout << "Ф.И.О. должно начинаться с больших букв!";
+		cout << "Ф.И.О. должно начинаться с больших букв (лишние пробелы не допустимы)!";
 		GoToXY(65, 22);
 		pulsar();
 		system("cls");
@@ -4150,21 +4155,20 @@ void Autorization() {
 	string login;// ПРОВЕРКА +
 
 	int check = 1;
-	while (check) {
-		GoToXY(70, 20);
-		cout << "—————————————— Авторизация ——————————————" << endl;
+	GoToXY(70, 20);
+	cout << "—————————————— Авторизация ——————————————" << endl;
 
-		GoToXY(70, 27);
-		cout << "—————————————————————————————————————————" << endl;
-		GoToXY(75, 22);
+	GoToXY(70, 27);
+	cout << "—————————————————————————————————————————" << endl;
+	GoToXY(75, 22);
 
-		cout << "Введите логин: ";
+	cout << "Введите логин: ";
+	string temp;
+	getline(cin, temp);
+	if (temp == "") getline(cin, login); // ПРОВЕРКА +
+	else login = temp;
 
-		getline(cin, login); // ПРОВЕРКА +
-		check = checkLogin(login);
-	}
 	GoToXY(75, 23);// определяем курсор в точку х, у (центр экрана примерно)
-	
 	cout << "Введите пароль: ";
 	string password = passwordEntering();
 
@@ -4186,7 +4190,7 @@ bool checkLogin(string login) {
 			login[i] == '^' || login[i] == '&' || login[i] == '*' || login[i] == '(' || login[i] == ')' || login[i] == '-' ||
 			login[i] == '+' || login[i] == '=' || login[i] == '>' || login[i] == '<' || login[i] == '/' || login[i] == '|' ||
 			login[i] == ',' || login[i] == '\'' || login[i] == '[' || login[i] == ']' || login[i] == '{' || login[i] == '}' ||
-			login[i] == ':' || login[i] == ';' || login[i] == '\"' || login[i] == '?' || login[i] == ' ') {
+			login[i] == ':' || login[i] == ';' || login[i] == '\\' || login[i] == '?' || login[i] == ' ') {
 			system("cls");
 			GoToXY(55, 20);
 			cout << "Доступны только следующие спец. символы: _ (нижнее подчеркивание)  . (точка)";
@@ -4229,7 +4233,7 @@ bool checkPassword(string str) {
 			return true;
 		}
 		if (str[i] == 'а' || str[i] == 'й'
-			|| str[i] == 'ц' || str[i] == 'х' || str[i] == 'ъ' || str[i] == 'y'
+			|| str[i] == 'ц' || str[i] == 'х' || str[i] == 'ъ'
 			|| str[i] == 'у' || str[i] == 'з' || str[i] == 'ф' || str[i] == 'ы' || str[i] == 'в'
 			|| str[i] == 'к' || str[i] == 'щ' || str[i] == 'д' || str[i] == 'л' || str[i] == 'п'
 			|| str[i] == 'е' || str[i] == 'ш' || str[i] == 'ж' || str[i] == 'о' || str[i] == 'р'
@@ -4323,7 +4327,7 @@ bool CheckAutorization(string login, string password) {
 			system("cls");
 			GoToXY(75, 20);
 			cout << "Добро пожаловать, " << clients[i].name << "!";
-			_getch();
+			Sleep(1050);
 			MainStudentMenu(i);
 			return true;
 		}
@@ -4331,7 +4335,8 @@ bool CheckAutorization(string login, string password) {
 			system("cls");
 			GoToXY(75, 20);
 			cout << "Пароль введен неверно!";
-			_getch();
+			GoToXY(67, 22);
+			pulsar();
 			return true;
 		}
 	}
