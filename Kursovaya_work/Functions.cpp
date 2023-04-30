@@ -2875,7 +2875,7 @@ void putUpPasses(int count) {
 	GoToXY(100, y);
 	cout << "| Логин";
 	GoToXY(55, y + 1);
-	cout << "——————————————————————————————————————————————————————";
+	cout << "——————————————————————————————————————————————————————————————";
 
 
 	int i = 0;
@@ -2890,7 +2890,7 @@ void putUpPasses(int count) {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -3522,7 +3522,7 @@ void rateOlimp(int count) {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
@@ -3590,7 +3590,7 @@ void rateLaba(int count) {
 		GoToXY(100, y);
 		cout << "| " << clients[i].login;
 		GoToXY(55, y + 1);
-		cout << "——————————————————————————————————————————————————————";
+		cout << "——————————————————————————————————————————————————————————————";
 	}
 	int choice{};
 	choice = checkNum(choice, CountOfUsers, i);
