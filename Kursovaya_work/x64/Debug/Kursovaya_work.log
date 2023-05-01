@@ -1,17 +1,1 @@
-﻿  Functions.cpp
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(24,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(201,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(537,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(661,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(764,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(866,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(946,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(1060,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(1363,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(1449,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(1763,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(1866,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(2006,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(2082,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\Kursovaya_work\Functions.cpp(4073,33): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
-  Kursovaya_work.vcxproj -> D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\x64\Debug\Kursovaya_work.exe
+﻿  Kursovaya_work.vcxproj -> D:\Study\ТРПО\1курс\Курсач\Kursovaya_work\x64\Debug\Kursovaya_work.exe

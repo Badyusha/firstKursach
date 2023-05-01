@@ -120,7 +120,7 @@ void rate_Laba(int count, int* grade);
 
 
 
-void RegistrationMenu();
+void mainMenu();
 
 string pressOutFunc(string str);
 

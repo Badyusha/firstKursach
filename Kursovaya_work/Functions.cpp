@@ -151,7 +151,7 @@ void Pentagon() {
 }
 
 //главное меню
-void RegistrationMenu() {
+void mainMenu() {
 	setlocale(LC_ALL, "Rus"); // подкл рус яз
 	system("chcp 1251"); // два раза подк рус яз потому что при записи в файл кракозябра без систем
 	system("cls");
@@ -4347,7 +4347,7 @@ bool CheckAutorization(string login, string password) {
 			system("cls");
 			GoToXY(75, 20);
 			cout << "Добро пожаловать, " << teachers[i].name << "!";
-			_getch();
+			Sleep(1050);
 			MainProfessorMenu(i);
 			return true;
 		}
@@ -4366,7 +4366,7 @@ bool CheckAutorization(string login, string password) {
 		system("cls");
 		GoToXY(75, 20);
 		cout << "Добро пожаловать, администратор!";
-		_getch();
+		Sleep(1050);
 		MainAdminMenu();
 		return true;
 	}
