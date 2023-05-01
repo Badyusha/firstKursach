@@ -3081,6 +3081,16 @@ int check_Range(int range) {
 	return range;
 }
 
+bool checkEquals(int firstRange, int secondRange) {
+	if (secondRange <= firstRange) {
+		GoToXY(65, 24);
+		cout << "Правая граница должны быть больше левой!";
+		GoToXY(65, 26);
+		pulsar();
+		return secondRange <= firstRange;
+	}
+}
+
 void englishGradesList() {
 	system("cls");
 	int firstRange{}, secondRange{};
@@ -3090,6 +3100,7 @@ void englishGradesList() {
 	GoToXY(70, 22);
 	cout << "Введите правую границу: ";
 	secondRange = check_Range(secondRange);
+	if(checkEquals(firstRange, secondRange)) return;
 	box();
 	int countHighGrades = 0;
 	int y = 16;
@@ -3167,6 +3178,7 @@ void mathGradesList() {
 	GoToXY(70, 22);
 	cout << "Введите правую границу: ";
 	secondRange = check_Range(secondRange);
+	if (checkEquals(firstRange, secondRange)) return;
 	box();
 	int countHighGrades = 0;
 	int y = 16;
@@ -3244,6 +3256,7 @@ void oaipGradesList() {
 	GoToXY(70, 22);
 	cout << "Введите правую границу: ";
 	secondRange = check_Range(secondRange);
+	if (checkEquals(firstRange, secondRange)) return;
 	box();
 	int countHighGrades = 0;
 	int y = 16;
@@ -3321,6 +3334,7 @@ void oopGradesList() {
 	GoToXY(70, 22);
 	cout << "Введите правую границу: ";
 	secondRange = check_Range(secondRange);
+	if (checkEquals(firstRange, secondRange)) return;
 	box();
 	int countHighGrades = 0;
 	int y = 16;
@@ -3397,6 +3411,7 @@ void physicsGradesList() {
 	GoToXY(70, 22);
 	cout << "Введите правую границу: ";
 	secondRange = check_Range(secondRange);
+	if (checkEquals(firstRange, secondRange)) return;
 	box();
 	int countHighGrades = 0;
 	int y = 16;
