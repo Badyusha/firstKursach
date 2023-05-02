@@ -3715,12 +3715,22 @@ void rate_Laba(int count, int *grade) {
 
 
 bool checkAccounts(string login) {
+	if (login == adminLogin) {
+		system("cls");
+		GoToXY(70, 20);
+		cout << "Пользователь с таким логином уже зарегистрирован!";
+		GoToXY(73, 22);
+		pulsar();
+		system("cls");
+		return true;
+	}
 	for (int i = 0; i < CountOfProfessors; ++i) {
 		if (login == teachers[i].login) {
 			system("cls");
 			GoToXY(70, 20);
 			cout << "Пользователь с таким логином уже зарегистрирован!";
-			_getch();
+			GoToXY(73, 22);
+			pulsar();
 			system("cls");
 			return true;
 		}
@@ -3730,7 +3740,8 @@ bool checkAccounts(string login) {
 			system("cls");
 			GoToXY(70, 20);
 			cout << "Пользователь с таким логином уже зарегистрирован!";
-			_getch();
+			GoToXY(73, 22);
+			pulsar();
 			system("cls");
 			return true;
 		}
@@ -3752,8 +3763,11 @@ int Registration(int i) {
 		GoToXY(75, 21);// определяем курсор в точку х, у (центр экрана примерно)
 		cout << "Введите логин: ";
 
+		getline(cin, login);
+		if (login == "") {
+			getline(cin, login); // ПРОВЕРКА
+		}
 
-		getline(cin, login); // ПРОВЕРКА
 		check = checkLogin(login);
 		if (!check) {
 			check1 = checkAccounts(login);
@@ -4051,19 +4065,19 @@ void regProfessor(string login, string password) {
 			else 	SetConsoleTextAttribute(hStdOut, 7);
 
 			if (i == 0) {
-				GoToXY(77, ++y);
+				GoToXY(80, ++y);
 				cout << Menu[i] << endl;
 			}
 			if (i == 1) {
-				GoToXY(73, ++y);
+				GoToXY(76, ++y);
 				cout << Menu[i] << endl;
 			}
 			if (i == 2) {
-				GoToXY(70, ++y);
+				GoToXY(73, ++y);
 				cout << Menu[i] << endl;
 			}
 			if (i == 3) {
-				GoToXY(62, ++y);
+				GoToXY(65, ++y);
 				cout << Menu[i] << endl;
 			}
 			if (i == 4) {
