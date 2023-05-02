@@ -136,8 +136,6 @@ void regProfessor(string login, string password);
 
 void recordData();
 
-bool CheckUsers(string login, string password);
-
 string PressmarkFunc(string str);
 
 void Autorization();

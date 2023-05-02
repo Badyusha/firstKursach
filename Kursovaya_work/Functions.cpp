@@ -4153,24 +4153,6 @@ void recordData() {
 	Sleep(800);
 }
 
-bool CheckUsers(string login, string password) { // ПЕРЕДЕЛАТЬ
-		system("cls");
-		string adminLogin = "admin", adminPassword = "admin123";
-		if (login == adminLogin && password == adminPassword) {
-			//
-		}
-		GoToXY(50, 20);
-		cout << "Вы являетесь первым пользователем, вам будут предоставлены права администратора!";
-		GoToXY(65, 20);
-		
-		string path = "admins.txt";
-		ofstream funcAdminOut;
-		funcAdminOut.open(path);
-		_getch();
-		system("cls");
-		return login == adminLogin && password == adminPassword;
-}
-
 string PressmarkFunc(string str) {
 	for (int i = 0; i < size(str); ++i) {
 		++str[i];
