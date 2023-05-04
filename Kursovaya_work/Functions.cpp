@@ -19,6 +19,7 @@ const string adminPassword = "admin123";
 
 
 
+
 void Pentagon() {
 
 	srand(time(NULL));
@@ -192,6 +193,7 @@ void mainMenu() {
 		case ESCAPE:
 			SetConsoleTextAttribute(hStdOut, 7);
 			recordLabaGrades();
+			recordProfessors();
 			exit(0);
 		case UP:
 			if (active_menu > 0) {
