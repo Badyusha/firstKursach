@@ -958,14 +958,19 @@ void gradesList() {
 			switch (active_menu)
 			{
 			case 4:	englishGradesList();
+				system("cls");
 				break;
 			case 3: mathGradesList();
+				system("cls");
 				break;
 			case 0: oaipGradesList();
+				system("cls");
 				break;
 			case 1:	oopGradesList();
+				system("cls");
 				break;
 			case 2: physicsGradesList();
+				system("cls");
 				break;
 			case 5:
 				system("cls");
@@ -3087,8 +3092,8 @@ bool checkEquals(int firstRange, int secondRange) {
 		cout << "Правая граница должны быть больше левой!";
 		GoToXY(65, 26);
 		pulsar();
-		return secondRange <= firstRange;
 	}
+	return secondRange <= firstRange;
 }
 
 void englishGradesList() {
