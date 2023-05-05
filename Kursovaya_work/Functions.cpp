@@ -3797,14 +3797,14 @@ string passwordEntering() {
 		}
 		else if (ch == 8 && j > 0) {
 			cout << "\b\b ";
-			--j;
-			asciiChar[j] = '\0';
+			asciiChar[--j] = '\0';
 		}
 		else if (j >= 0) {
+			cout << "\b" << ch;
+			Sleep(100);
 			cout << "\b* ";
 			int asciiVal = ch;
-			asciiChar[j] = static_cast<char>(asciiVal); // получаем символ из кода символа
-			++j;
+			asciiChar[j++] = static_cast<char>(asciiVal); // получаем символ из кода символа
 		}
 
 	}
