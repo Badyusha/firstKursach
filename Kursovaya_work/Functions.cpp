@@ -2387,94 +2387,6 @@ void examGrades(int count) {
 	system("cls");
 }
 
-void averageSort() {
-
-	/*
-	int engGradesCount{};
-	int mathGradesCount{};
-	int oaipGradesCount{};
-	int oopGradesCount{};
-	int physicsGradesCount{};
-
-	
-	for (int i = 0; i < CountOfUsers; ++i) {
-		if(clients[i].englishGradeExam > 0){
-			clients[i].averageEnglish += clients->englishGradeExam;
-			++engGradesCount;
-		}
-		if (clients[i].mathGradeExam > 0) {
-			clients[i].averageMath += clients->mathGradeExam;
-			++mathGradesCount;
-		}
-		if (clients[i].oaipGradeExam > 0) {
-			clients[i].averageOaip += clients->oaipGradeExam;
-			++oaipGradesCount;
-		}
-		if (clients[i].oopGradeExam > 0) {
-			clients[i].averageOop += clients->oopGradeExam;
-			++oopGradesCount;
-		}
-		if (clients[i].physicsGradeExam > 0) {
-			clients[i].averagePhysics += clients->physicsGradeExam;
-			++physicsGradesCount;
-		}
-
-
-
-		if (clients[i].englishGradeOlimp > 0) {
-			clients[i].averageEnglish += clients->englishGradeOlimp;
-			++engGradesCount;
-		}
-		if (clients[i].mathGradeOlimp > 0) {
-			clients[i].averageMath += clients->mathGradeOlimp;
-			++mathGradesCount;
-		}
-		if (clients[i].oaipGradeOlimp > 0) {
-			clients[i].averageOaip += clients->oaipGradeOlimp;
-			++oaipGradesCount;
-		}
-		if (clients[i].oopGradeOlimp > 0) {
-			clients[i].averageOop += clients->oopGradeOlimp;
-			++oopGradesCount;
-		}
-		if (clients[i].physicsGradeOlimp > 0) {
-			clients[i].averagePhysics += clients->physicsGradeOlimp;
-			++physicsGradesCount;
-		}
-
-		for (int j = 0; j < 50; ++j) {
-			if (clients[i].englishGradeLaba[j] > 0) {
-				clients[i].averageEnglish += clients[i].englishGradeLaba[j];
-				++engGradesCount;
-			}
-			if (clients[i].mathGradeLaba[j] > 0) {
-				clients[i].averageMath += clients[i].mathGradeLaba[j];
-				++mathGradesCount;
-			}
-			if (clients[i].oaipGradeLaba[j] > 0) {
-				clients[i].averageOaip += clients[i].oaipGradeLaba[j];
-				++oaipGradesCount;
-			}
-			if (clients[i].oopGradeLaba[j] > 0) {
-				clients[i].averageOop += clients[i].oopGradeLaba[j];
-				++oopGradesCount;
-			}
-			if (clients[i].physicsGradeLaba[j] > 0) {
-				clients[i].averagePhysics += clients[i].physicsGradeLaba[j];
-				++physicsGradesCount;
-			}
-		}
-
-		clients[i].averageEnglish /= engGradesCount;
-		clients[i].averageMath /= mathGradesCount;
-		clients[i].averageOaip /= oaipGradesCount;
-		clients[i].averageOop /= oopGradesCount;
-		clients[i].averagePhysics /= physicsGradesCount;
-	}
-	*/
-
-}
-
 void subjectsGrades(int count) {
 	system("cls");
 
@@ -3122,7 +3034,7 @@ void englishGradesList() {
 		GoToXY(65, 20);
 		cout << "Студентов с оценками ниже заданной не обнаружено!";
 	}
-	GoToXY(66, 24);
+	GoToXY(66, y + 1);
 	pulsar();
 	system("cls");
 }
@@ -3200,7 +3112,7 @@ void mathGradesList() {
 		GoToXY(65, 20);
 		cout << "Студентов с оценками ниже заданной не обнаружено!";
 	}
-	GoToXY(66, 24);
+	GoToXY(66, y + 1);
 	pulsar();
 	system("cls");
 }
@@ -3278,7 +3190,7 @@ void oaipGradesList() {
 		GoToXY(65, 20);
 		cout << "Студентов с оценками ниже заданной не обнаружено!";
 	}
-	GoToXY(66, 24);
+	GoToXY(66, y + 1);
 	pulsar();
 	system("cls");
 }
@@ -3356,7 +3268,7 @@ void oopGradesList() {
 		GoToXY(65, 20);
 		cout << "Студентов с оценками ниже заданной не обнаружено!";
 	}
-	GoToXY(66, 24);
+	GoToXY(66, y + 1);
 	pulsar();
 	system("cls");
 }
@@ -3433,7 +3345,7 @@ void physicsGradesList() {
 		GoToXY(65, 20);
 		cout << "Студентов с оценками ниже заданной не обнаружено!";
 	}
-	GoToXY(66, 24);
+	GoToXY(66, y + 1);
 	pulsar();
 	system("cls");
 }
