@@ -3867,11 +3867,15 @@ bool checkName(string name) {
 			|| name[i] == 'i' || name[i] == 'o' || name[i] == 'p' || name[i] == 'a' || name[i] == 's'
 			|| name[i] == 'd' || name[i] == 'f' || name[i] == 'g' || name[i] == 'h' || name[i] == 'j'
 			|| name[i] == 'k' || name[i] == 'l' || name[i] == 'z' || name[i] == 'x' || name[i] == 'c'
-			|| name[i] == 'v' || name[i] == 'b' || name[i] == 'n' || name[i] == 'm' || size(name) < 3 || size(name) > 25)  {
+			|| name[i] == 'v' || name[i] == 'b' || name[i] == 'n' || name[i] == 'm' || size(name) > 25)  {
 			system("cls");
 			GoToXY(70, 20);
 			cout << "Недопустимые символы!";
-			GoToXY(65, 22);
+			GoToXY(60, 22);
+			SetConsoleTextAttribute(hStdOut, 8);
+			cout << "/*Латинские буквы, спец. символы или длинное имя*/";
+			SetConsoleTextAttribute(hStdOut, 7);
+			GoToXY(65, 24);
 			pulsar();
 			system("cls");
 			return true;
@@ -3936,7 +3940,8 @@ bool checkName(string name) {
 				GoToXY(65, 20);
 				cout << "Ф.И.О. должно начинаться с больших букв!";
 				GoToXY(65, 22);
-				pulsar();				system("cls");
+				pulsar();				
+				system("cls");
 				return true;
 			}
 		}
