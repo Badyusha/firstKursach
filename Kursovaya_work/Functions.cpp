@@ -3899,6 +3899,27 @@ bool checkName(string name) {
 		return true;
 	}
 
+	for (int i = 0; i < size(name); ++i) {
+		if (name[i++] == ' ') {
+			if (name[i] == 'а' || name[i] == 'й'
+				|| name[i] == 'ц' || name[i] == 'х' || name[i] == 'ъ' || name[i] == 'y'
+				|| name[i] == 'у' || name[i] == 'з' || name[i] == 'ф' || name[i] == 'ы' || name[i] == 'в'
+				|| name[i] == 'к' || name[i] == 'щ' || name[i] == 'д' || name[i] == 'л' || name[i] == 'п'
+				|| name[i] == 'е' || name[i] == 'ш' || name[i] == 'ж' || name[i] == 'о' || name[i] == 'р'
+				|| name[i] == 'н' || name[i] == 'г' || name[i] == 'э' || name[i] == 'я' || name[i] == 'ч'
+				|| name[i] == 'с' || name[i] == 'м' || name[i] == 'ю' || name[i] == 'б' || name[i] == 'ь'
+				|| name[i] == 'т' || name[i] == 'и' || name[i] == 'ё') {
+				system("cls");
+				GoToXY(65, 20);
+				cout << "Ф.И.О. должно начинаться с больших букв!";
+				GoToXY(65, 22);
+				pulsar();
+				system("cls");
+				return true;
+			}
+		}
+	}
+
 	int capsLetters = 0, spaces = 0;
 	for (int i = 0; i < size(name); ++i) {
 		if (name[i] == 'А' || name[i] == 'Й'
@@ -3926,26 +3947,6 @@ bool checkName(string name) {
 		return true;
 	}
 
-	for (int i = 0; i < size(name); ++i) {
-		if (name[i++] == ' ') {
-			if (name[i] == 'а' || name[i] == 'й'
-				|| name[i] == 'ц' || name[i] == 'х' || name[i] == 'ъ' || name[i] == 'y'
-				|| name[i] == 'у' || name[i] == 'з' || name[i] == 'ф' || name[i] == 'ы' || name[i] == 'в'
-				|| name[i] == 'к' || name[i] == 'щ' || name[i] == 'д' || name[i] == 'л' || name[i] == 'п'
-				|| name[i] == 'е' || name[i] == 'ш' || name[i] == 'ж' || name[i] == 'о' || name[i] == 'р'
-				|| name[i] == 'н' || name[i] == 'г' || name[i] == 'э' || name[i] == 'я' || name[i] == 'ч'
-				|| name[i] == 'с' || name[i] == 'м' || name[i] == 'ю' || name[i] == 'б' || name[i] == 'ь'
-				|| name[i] == 'т' || name[i] == 'и' || name[i] == 'ё') {
-				system("cls");
-				GoToXY(65, 20);
-				cout << "Ф.И.О. должно начинаться с больших букв!";
-				GoToXY(65, 22);
-				pulsar();				
-				system("cls");
-				return true;
-			}
-		}
-	}
 	return false;
 }
 
@@ -4439,6 +4440,15 @@ void sortNoutput() {
 		GoToXY(45, y + 1);
 		cout << "——————————————————————————————————————————————————————————————————————————————————————————";
 	}
+	if (y == 8 && CountOfUsers > 1) {
+		system("cls");
+		GoToXY(65, 20);
+		cout << "Невозможно составить список топ студентов!";
+		GoToXY(65, 22);
+		pulsar();
+		system("cls");
+		return;
+	}
 
 	GoToXY(70, y + 1);
 	system("pause");
@@ -4446,6 +4456,15 @@ void sortNoutput() {
 }
 
 void topStudents() {
+	if (CountOfUsers < 2) {
+		system("cls");
+		GoToXY(65, 20);
+		cout << "Недостаточно пользователей в системе!";
+		GoToXY(65, 22);
+		pulsar();
+		system("cls");
+		return;
+	}
 	averageGrade();
 	sortNoutput();
 }
